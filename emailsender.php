@@ -1,32 +1,23 @@
 <?php
-// Check for empty fields
-if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['message'])) {
-  http_response_code(400);
-  echo "All fields are required.";
-  exit;
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
 
-// Set the recipient email address
-$to = "hvntaq@gmail.com";
+    // Wprowadź odpowiednie zmiany, aby dostosować skrypt do Twojego serwera SMTP
+    $to = "hvntaq@gmail.com";
+    $subject = "Nowa wiadomość ze strony kontaktowej";
+    $body = "Od: $name\nEmail: $email\nWiadomość:\n$message";
 
-// Set the email subject
-$subject = $_POST['subject'];
-
-// Construct the email body
-$message = "Name: " . $_POST['name'] . "\n\n";
-$message .= "Email: " . $_POST['email'] . "\n\n";
-$message .= "Message: \n" . $_POST['message'];
-
-// Set the email headers
-$headers = "From: " . $_POST['name'] . " <" . $_POST['email'] . ">\r\n";
-$headers .= "Reply-To: " . $_POST['email'] . "\r\n";
-
-// Send the email
-if (mail($to, $subject, $message, $headers)) {
-  http_response_code(200);
-  echo "Thank you! Your message has been sent.";
+    if (mail($to, $subject, $body)) {
+        // Udało się wysłać email
+        echo json_encode(array("status" => "success"));
+    } else {
+        // Wystąpił błąd podczas wysyłania emaila
+        echo json_encode(array("status" => "error"));
+    }
 } else {
-  http_response_code(500);
-  echo "Oops! Something went wrong and we couldn't send your message.";
+    // Metoda żądania nie jest POST, więc odrzuć żądanie
+    http_response_code(405);
 }
 ?>

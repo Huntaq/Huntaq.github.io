@@ -217,6 +217,43 @@
     </div>
   </div>
 </section>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Zapobiega domyślnej akcji przesyłania formularza
+
+    // Pobieranie wartości pól formularza
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    // Wywołanie funkcji do wysyłki emaila
+    sendEmail(name, email, message);
+  });
+
+  function sendEmail(name, email, message) {
+  
+
+    
+    $.ajax({
+      url: 'emailsender.php', 
+      type: 'POST',
+      data: {
+        name: name,
+        email: email,
+        message: message
+      },
+      success: function(response) {
+        // Obsługa sukcesu - np. wyświetlenie komunikatu o wysłaniu wiadomości
+        alert('Wiadomość została wysłana!');
+      },
+      error: function(xhr, status, error) {
+        // Obsługa błędu - np. wyświetlenie komunikatu o niepowodzeniu wysłania wiadomości
+        alert('Wystąpił błąd podczas wysyłania wiadomości.');
+      }
+    });
+  }
+</script>
+
 
 <footer class="bg-dark text-white text-center py-3">
   <p>"Potężna wichura, łamiąc duże drzewa, trzciną zaledwie ledwo kołysze..." </p>
