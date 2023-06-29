@@ -198,7 +198,7 @@
     <h2 class="text-center mb-4">Kontakt</h2>
     <div class="row">
       <div class="col-md-6 mx-auto">
-        <form>
+        <form onsubmit="sendEmail(); reset(); return false">
           <div class="form-group">
             <label for="name">Imię</label>
             <input type="text" class="form-control" id="name" placeholder="Wpisz imię">
@@ -217,40 +217,23 @@
     </div>
   </div>
 </section>
+
+<!--Email sender-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Zapobiega domyślnej akcji przesyłania formularza
+  function sendEmail() {
+    Email.send({
+      SecureToken : "e735e3db-e7e1-4d44-af11-74d11299d089",
+      To : 'jhenschelkontakt@gmail.com',
+      From : "henschelsender@gmail.com",
+      Subject : "Nowy formularz kontaktowy z porftolio!",
+      Body : "Imie: " + document.getElementById("name").value
+          + "<br> Email: " + document.getElementById("email").value
+          + "<br> Wiadomość: " + document.getElementById("message").value
+  }).then(
 
-    // Pobieranie wartości pól formularza
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-
-    // Wywołanie funkcji do wysyłki emaila
-    sendEmail(name, email, message);
-  });
-
-  function sendEmail(name, email, message) {
-  
-
-    
-    $.ajax({
-      url: 'emailsender.php', 
-      type: 'POST',
-      data: {
-        name: name,
-        email: email,
-        message: message
-      },
-      success: function(response) {
-        // Obsługa sukcesu - np. wyświetlenie komunikatu o wysłaniu wiadomości
-        alert('Wiadomość została wysłana!');
-      },
-      error: function(xhr, status, error) {
-        // Obsługa błędu - np. wyświetlenie komunikatu o niepowodzeniu wysłania wiadomości
-        alert('Wystąpił błąd podczas wysyłania wiadomości.');
-      }
-    });
+    message => alert("Wiadomość wysłana pomyślnie.")
+  );       
   }
 </script>
 
