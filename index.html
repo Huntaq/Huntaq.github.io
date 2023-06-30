@@ -92,7 +92,7 @@
   <div class="container text-center">
     <ul class="list-inline">
       <li class="list-inline-item">
-        <a href="https://github.com/" target="_blank" class="btn btn-outline-light">GitHub</a>
+        <a href="https://github.com/Huntaq" target="_blank" class="btn btn-outline-light">GitHub</a>
       </li>
       <li class="list-inline-item">
         <a href="https://www.linkedin.com/in/jakub-henschel/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
@@ -111,28 +111,34 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 1">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 1">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 1</h5>
+                      <p class="card-text">Opis projektu 1.</p>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 2">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 2">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 2</h5>
+                      <p class="card-text">Opis projektu 2.</p>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 3">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 3">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 3</h5>
+                      <p class="card-text">Opis projektu 3.</p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -144,28 +150,34 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 4">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 4">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 4</h5>
+                      <p class="card-text">Opis projektu 4.</p>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 5">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 5">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 5</h5>
+                      <p class="card-text">Opis projektu 5.</p>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="card mb-4">
-                  <img src="./img/5valhi.png" class="card-img-top" alt="Projekt 6">
+                  <img src="./img/codeplaceholder.png" class="card-img-top img-fluid d-block" alt="Projekt 6">
                   <div class="card-body">
-                    <h5 class="card-title">Projekt 1</h5>
-                    <p class="card-text">Opis projektu 1.</p>
+                    <a href="link-do-strony" class="card-link" style="color: black;">
+                      <h5 class="card-title">Projekt 6</h5>
+                      <p class="card-text">Opis projektu 6.</p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -185,13 +197,46 @@
   </div>
 </section>
 
+<section id="calculator" class="py-5 jumbotron">
+  
 
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Kalkulator cen pracy</h2>
+    <form id="calculatorForm">
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="hours">Liczba godzin pracy:</label>
+          <input type="number" class="form-control" id="hours" name="hours" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Cena za godzinę:</label>
+          <input type="number" class="form-control" id="price" name="price" value="40" readonly>
+        </div>
+        <div class="form-group">
+          <label for="total">Całkowita cena:</label>
+          <input type="text" class="form-control" id="total" name="total" readonly>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="calculateTotal(event)">Oblicz</button>
+      </div>      
+    </form>
+  </div>
+  <script>
+    // Obsługa zdarzenia przesyłania formularza
+    function calculateTotal(event) {
+      event.preventDefault();
 
+      var hours = parseInt($("#hours").val());
+      var price = parseInt($("#price").val());
+      var total = hours * price;
 
-
-
-
-
+      if (hours >= 0) {
+        $("#total").val(total);
+      } else {
+        alert("Liczba godzin nie może być ujemna.");
+      }
+    }
+  </script>
+</section>
 
 <section id="contact" class="py-5"> <!--EMAIL-->
   <div class="container">
