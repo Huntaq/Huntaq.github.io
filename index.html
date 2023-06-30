@@ -297,27 +297,47 @@
       </div>
     </div>
   </div>
+  
 </section>
 
 <!--Email sender-->
+
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
   function sendEmail() {
+    var currentDate = new Date();
+    var formattedDate = currentDate.toLocaleString();
     Email.send({
       SecureToken : "e735e3db-e7e1-4d44-af11-74d11299d089",
       To : 'jhenschelkontakt@gmail.com',
       From : "henschelsender@gmail.com",
-      Subject : "Nowy formularz kontaktowy z porftolio!",
+      Subject : "Nowy formularz kontaktowy z porftolio! - " + formattedDate,
       Body : "Imie: " + document.getElementById("name").value
           + "<br> Email: " + document.getElementById("email").value
           + "<br> Wiadomość: " + document.getElementById("message").value
-  }).then(
-
-    message => alert("Wiadomość wysłana pomyślnie.")
-  );       
+        }).then(
+        message => alert("Wiadomość wysłana pomyślnie.")
+      );         
   }
 </script>
-
+<script>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Wiadomość</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Wiadomość wysłana pomyślnie.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
 
 <footer class="bg-dark text-white text-center py-3">
   <p>"Potężna wichura, łamiąc duże drzewa, trzciną zaledwie ledwo kołysze..." </p>
