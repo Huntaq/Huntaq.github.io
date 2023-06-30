@@ -69,6 +69,9 @@
         <a class="nav-link" href="#projects">Projekty</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#calculator">Kalkulator</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#contact">Kontakt</a>
       </li>
     </ul>
@@ -89,17 +92,50 @@
   </div>
 </section>
 <section id="social" class="py-3 bg-dark">
-  <div class="container text-center">
+  <div class="container text-center ">
     <ul class="list-inline">
       <li class="list-inline-item">
-        <a href="https://github.com/Huntaq" target="_blank" class="btn btn-outline-light">GitHub</a>
+        <a href="https://github.com/Huntaq" target="_blank" class="btn btn-outline-light">GitHub </a>
       </li>
       <li class="list-inline-item">
         <a href="https://www.linkedin.com/in/jakub-henschel/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
       </li>
     </ul>
   </div>
+  <br>
 </section>
+
+<section class="container">
+  <style>
+    .icon i {
+        transition: transform 0.3s ease;
+    }
+
+    .icon:hover i {
+        transform: scale(1.5);
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
+<div class="container lead" data-aos="zoom-in">
+  <div class="row">
+      <div class="col icon d-flex align-items-center justify-content-center">
+          <i class="devicon-cplusplus-plain" style="font-size: 60px; margin-top: -10px;"></i>
+      </div>
+      <div class="col icon d-flex align-items-center justify-content-center">
+          <i class="devicon-csharp-plain" style="font-size: 60px; margin-top: -10px;"></i>
+      </div>
+      <div class="col icon d-flex align-items-center justify-content-center">
+          <i class="devicon-python-plain" style="font-size: 60px; margin-top: -10px;"></i>
+      </div>
+      <div class="col icon d-flex align-items-center justify-content-center">
+        <i class="devicon-arduino-plain" style="font-size: 60px; margin-top: -10px;"></i>
+    </div>
+  </div>
+</div>
+<br>
+
+</section>
+
 <section id="projects" class="py-5 bg-light"> <!--PROJEKTY-->
 
   <div id="project-carousel" class="carousel slide" data-ride="carousel">
@@ -245,15 +281,15 @@
       <div class="col-md-6 mx-auto">
         <form onsubmit="sendEmail(); reset(); return false">
           <div class="form-group">
-            <label for="name">Imię</label>
+            <label for="name">Imię*</label>
             <input type="text" class="form-control" id="name" placeholder="Wpisz imię">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input type="email" class="form-control" id="email" placeholder="Wpisz email">
           </div>
           <div class="form-group">
-            <label for="message">Wiadomość</label>
+            <label for="message">Wiadomość*</label>
             <textarea class="form-control" id="message" rows="5" placeholder="Wpisz wiadomość"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Wyślij</button>
