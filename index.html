@@ -69,9 +69,6 @@
         <a class="nav-link" href="#projects">Projekty</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#calculator">Kalkulator</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="#contact">Kontakt</a>
       </li>
     </ul>
@@ -285,15 +282,15 @@
         <form onsubmit="sendEmail(); reset(); return false">
           <div class="form-group">
             <label for="name">Imię*</label>
-            <input type="text" class="form-control" id="name" placeholder="Wpisz imię">
+            <input type="text" class="form-control" id="name" placeholder="Wpisz imię" required>
           </div>
           <div class="form-group">
             <label for="email">Email*</label>
-            <input type="email" class="form-control" id="email" placeholder="Wpisz email">
+            <input type="email" class="form-control" id="email" placeholder="Wpisz email" required>
           </div>
           <div class="form-group">
             <label for="message">Wiadomość*</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Wpisz wiadomość"></textarea>
+            <textarea class="form-control" id="message" rows="5" placeholder="Wpisz wiadomość" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Wyślij</button>
         </form>
